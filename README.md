@@ -1,11 +1,5 @@
 # SAR-CNN : SAR image despeckling through convolutional neural networks
 This is the implementation in Python/Torch of the paper "[SAR image despeckling through convolutional neural networks](https://ieeexplore.ieee.org/document/8128234)".Results differ slightly from those of the paper, obtained using Matlab/MatConvNet.
-
-## Team members
- Giovanni Chierchia (giovanni (dot) chierchia (at) esiee (dot) fr);
- Davide Cozzolino (davide (dot) cozzolino@unina (dot) it);
- Luisa Verdoliva  (verdoliv (at) unina (dot)it);
- Giovanni Poggi   (poggi (at) unina (dot)it).
  
 ## License
 Copyright (c) 2020 Image Processing Research Group of University Federico II of Naples ('GRIP-UNINA').

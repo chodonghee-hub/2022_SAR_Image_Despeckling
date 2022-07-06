@@ -15,10 +15,10 @@ import numpy as np
 from utils import metrics
 import pickle
 
-
 # network SAR-CNN 2017
 import models.DnCNN as DnCNN
 with open("./weights/sar_sync/SAR_CNN_e50.pkl", "rb") as fid:
+#with open("C:/Users/ADMIN/Desktop/2022/SAR-CNN/weights/sar_sync", "r") as fid:
     dncnn_opt = dict(**pickle.load(fid).dncnn)
     dncnn_opt["residual"] = True
 net = DnCNN.DnCNN(1, 1, **dncnn_opt)
@@ -39,7 +39,8 @@ noise_int    = randomStream.gamma(size=target_amp.shape, shape=1.0, scale=1.0).a
 with torch.no_grad():
     if use_cuda:
         net = net.cuda()
-        
+    ####
+    net.cpu()        
     target_amp = torch.from_numpy(target_amp)[None, None, :, :]
     noise_int  = torch.from_numpy(noise_int)[None, None, :, :]
     noisy_int  = (target_amp**2)*noise_int
